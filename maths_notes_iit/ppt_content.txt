@@ -1,0 +1,269 @@
+
+================================================================================
+FILE: 12-03-26, neighbourhood to convex hull.pptx
+================================================================================
+
+================================================================================
+FILE: Adjoint and Inverse of a matrix.pptx
+================================================================================
+
+--- Slide 1 ---
+Adjoint and Inverse of a matrix
+Dr. Niharika Kulshrestha
+CDA-102
+
+================================================================================
+FILE: Articial Variable technique and big m-technique.pptx
+================================================================================
+
+================================================================================
+FILE: Basic solution 26-03-26.pptx
+================================================================================
+
+================================================================================
+FILE: Basis notation 30-3-26.pptx
+================================================================================
+
+================================================================================
+FILE: Cramersrule.pptx
+================================================================================
+
+================================================================================
+FILE: Diagonalization of Hermitian matrix.pptx
+================================================================================
+
+--- Slide 1 ---
+Hermitian Matrix
+Dr. Niharika Kulshrestha
+CDA-102
+
+================================================================================
+FILE: Diagonalization of the matrix.pptx
+================================================================================
+
+================================================================================
+FILE: Eigen values 23-02-26.pptx
+================================================================================
+
+================================================================================
+FILE: Eigen vectors part (ii) 25-02-2026.pptx
+================================================================================
+
+================================================================================
+FILE: Eigen vectors part (ii) 26-02-2026.pptx
+================================================================================
+
+================================================================================
+FILE: Elrmentary transformations.pptx
+================================================================================
+
+--- Slide 1 ---
+Elementary transformation
+Dr. Niharika Kulshrestha
+Assistant Professor
+niharikakul@gmail.com
+CDA-102
+
+================================================================================
+FILE: General linear programming problem, hyper plane and convex set.pptx
+================================================================================
+
+--- Slide 1 ---
+General linear Programming Problem, Hyperplane and Convex sets
+By Dr. Niharika Kulshrestha
+CDA-102
+
+================================================================================
+FILE: Graphical 16-03-26.pptx
+================================================================================
+
+================================================================================
+FILE: Graphical method lecture (ii) 17-03-26.pptx
+================================================================================
+
+================================================================================
+FILE: Graphical method lecture (iii) 18-03-26.pptx
+================================================================================
+
+--- Slide 7 ---
+• Hence Z is unbounded.
+
+================================================================================
+FILE: Graphical method lecture (iv) 19-03-26.pptx
+================================================================================
+
+================================================================================
+FILE: Mathematical formulation of LPP.pptx
+================================================================================
+
+--- Slide 1 ---
+Linear Programming Problem
+By
+Dr. Niharika Kulshrestha
+CDA-102
+
+--- Slide 15 ---
+TABLE: Machine | Products |  | 
+TABLE:  | A | B | C
+TABLE: M1 | 40 | 30 | 20
+TABLE: M2 | 25 | 25 | 40
+
+--- Slide 16 ---
+TABLE: Machine | Products |  |  | Machine hours available
+TABLE:  | A (x) | B (y) | C (z) | 
+TABLE: M1 | 40 | 30 | 20 | 100
+TABLE: M2 | 25 | 25 | 40 | 150
+TABLE: Profit | 3.00 | 2.00 | 4.00 | 
+
+--- Slide 21 ---
+TABLE: Kinds of wool | Types of Cloth |  | Stock of wool in metres
+TABLE:  | A (x) | B (y) | 
+TABLE: Red | 2 | 3 | 12
+TABLE: Green | 0 | 2 | 10
+TABLE: Blue | 3 | 5 | 15
+TABLE: Profit | 3.00 | 5.00 | 
+
+================================================================================
+FILE: Normal form of matrix.pptx
+================================================================================
+
+--- Slide 1 ---
+Normal form of matrix
+By Dr. Niharika Kulshrestha
+CDA-102
+
+================================================================================
+FILE: Nullity and solved problems of vector space.pptx
+================================================================================
+
+--- Slide 1 ---
+Rank and NullityAnd Solved problems of vector space
+By Dr. Niharika Kulshrestha
+CDA-102
+
+--- Slide 2 ---
+Rank and Nullity are two essential concepts related to matrices in Linear Algebra.
+The nullity of a matrix is determined by the difference between the order and rank of the matrix.
+The rank of a matrix is the number of linearly independent row or column vectors of a matrix.
+If n is the order of the square matrix A, then the nullity of A is given by n – r.
+Thus, the rank of a matrix is the number of linearly independent or non-zero vectors of a matrix, whereas nullity is the number of zero vectors of a matrix.
+The rank of matrix A is denoted as ρ(A), and the nullity is denoted as N(A).
+Evidently, if the rank of the matrix is equal to the order of the matrix, then the nullity of the matrix is zero.
+
+--- Slide 3 ---
+Rank and Nullity Theorem for Matrix
+Null space
+Let A be a real matrix of order m × n, the set of the solutions associated with the system of homogeneous equation AX = 0 is said to be the null space of A.
+Null space of A = { x ∈ Rn | Ax = 0}. Then the nullity of A will be the dimension of the Nullspace of A.
+If the rank of A is r, there are r leading variables in row-reduced echelon form of A and n – r free variables, which are solutions of the homogeneous system of equation AX = 0. Thus, n – r is the dimension of the null space of A. This fact motivates the rank and nullity theorem for matrices.
+
+--- Slide 5 ---
+Rank and nullity theorem
+If A is a matrix of order m × n, then
+Rank of A + Nullity of A = Number of columns in A = n
+
+--- Slide 6 ---
+Important Facts on Rank and Nullity
+The rank of an invertible matrix is equal to the order of the matrix, and its nullity is equal to zero.
+Rank is the number of leading column or non-zero row vectors of row-reduced echelon form of the given matrix, and the number of zero columns is the nullity.
+The nullity of a matrix is the dimension of the null space of A, also called the kernel of A.
+If A is an invertible matrix, then null space (A) = {0}.
+The rank of a matrix is the number of non-zero eigenvalues of the matrix, and the number of zero eigenvalues determines the nullity of the matrix.
+
+================================================================================
+FILE: Orthogonal and unitary matrices.pptx
+================================================================================
+
+--- Slide 1 ---
+Orthogonal and unitary matrices and Normalization of vectors
+
+================================================================================
+FILE: Rank of a matrix.pptx
+================================================================================
+
+--- Slide 1 ---
+Rank of a Matrix
+Dr. Niharika Kulshrestha
+Assistant Professor
+CDA-102
+niharikakul@gmail.com
+
+================================================================================
+FILE: Simplex algorithm 2-04-26.pptx
+================================================================================
+
+================================================================================
+FILE: Simplex method .pptx
+================================================================================
+
+================================================================================
+FILE: Simplex method solutions.pptx
+================================================================================
+
+================================================================================
+FILE: Solution of eqns using non homogeneous eqns.pptx
+================================================================================
+
+================================================================================
+FILE: Solution of homogeneous equations.pptx
+================================================================================
+
+================================================================================
+FILE: Vector space, subspace.pptx
+================================================================================
+
+--- Slide 1 ---
+Vector spaces and Subspaces
+Mathematics –II
+BSc. In Computer science
+By
+Dr. Niharika Kulshrestha
+
+--- Slide 14 ---
+Associative property
+Distributive property
+
+================================================================================
+FILE: addition and multiplication of matrices.pptx
+================================================================================
+
+================================================================================
+FILE: convex hull and convex cone 16-03-2026.pptx
+================================================================================
+
+================================================================================
+FILE: inverse matrix method.pptx
+================================================================================
+
+--- Slide 1 ---
+Matrix method (Inverse method)
+Dr. Niharika Kulshrestha
+
+================================================================================
+FILE: inverse of the matrices using elementary transformation.pptx
+================================================================================
+
+================================================================================
+FILE: linear dependence and independence of vectors.pptx
+================================================================================
+
+================================================================================
+FILE: linear transformation.pptx
+================================================================================
+
+================================================================================
+FILE: theorem and questions 31-03-26.pptx
+================================================================================
+
+================================================================================
+FILE: two phase method 13-04-25.pptx
+================================================================================
+
+================================================================================
+FILE: types of matrices.pptx
+================================================================================
+
+--- Slide 1 ---
+Matrics
+Dr. Niharika Kulshrestha
+CDA 102
