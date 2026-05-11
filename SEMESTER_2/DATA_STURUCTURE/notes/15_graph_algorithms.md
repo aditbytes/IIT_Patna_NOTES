@@ -271,6 +271,158 @@ def has_cycle(graph):
 
 ---
 
+### 3.8 Prim's Algorithm (Minimum Spanning Tree)
+
+Prim's algorithm builds an MST by greedily picking the **minimum-weight edge** that connects the current tree to a new vertex.
+
+**Key idea:** Maintain a priority queue of edges crossing the cut. Always pick the cheapest edge to a yet-unvisited vertex.
+
+**Time complexity:** $O((V + E) \log V)$ with a binary heap  
+**Space:** $O(V + E)$  
+**Works on:** Connected, undirected, weighted graphs
+
+```python
+import heapq
+
+def prim(graph, start):
+    """
+    graph: {node: [(neighbor, weight), ...]}
+    Returns: (MST edges list, total MST weight)
+    """
+    visited = set([start])
+    # (weight, current_node, parent_node)
+    min_heap = [(weight, neighbor, start) for neighbor, weight in graph[start]]
+    heapq.heapify(min_heap)
+
+    mst_edges = []
+    total_weight = 0
+
+    while min_heap and len(visited) < len(graph):
+        weight, node, parent = heapq.heappop(min_heap)
+
+        if node in visited:
+            continue
+
+        visited.add(node)
+        mst_edges.append((parent, node, weight))
+        total_weight += weight
+
+        for neighbor, edge_weight in graph[node]:
+            if neighbor not in visited:
+                heapq.heappush(min_heap, (edge_weight, neighbor, node))
+
+    return mst_edges, total_weight
+
+# Example weighted undirected graph
+graph = {
+    'A': [('B', 2), ('C', 3)],
+    'B': [('A', 2), ('C', 1), ('D', 4)],
+    'C': [('A', 3), ('B', 1), ('D', 5)],
+    'D': [('B', 4), ('C', 5)]
+}
+edges, weight = prim(graph, 'A')
+print(edges)   # [('A', 'B', 2), ('B', 'C', 1), ('B', 'D', 4)]
+print(weight)  # 7
+```
+
+**Trace on the example above (starting from A):**
+
+| Step | Edge Added | MST Weight |
+|------|-----------|------------|
+| 1 | A — B (2) | 2 |
+| 2 | B — C (1) | 3 |
+| 3 | B — D (4) | 7 |
+
+---
+
+### 3.9 Kruskal's Algorithm (Minimum Spanning Tree)
+
+Kruskal's algorithm builds an MST by **sorting all edges by weight** and adding them one by one, skipping edges that would create a cycle. Uses **Union-Find (Disjoint Set Union)** to detect cycles efficiently.
+
+**Time complexity:** $O(E \log E)$ (dominated by sorting)  
+**Space:** $O(V + E)$  
+**Works on:** Connected, undirected, weighted graphs (also handles forests)
+
+```python
+class UnionFind:
+    def __init__(self, nodes):
+        self.parent = {n: n for n in nodes}
+        self.rank   = {n: 0  for n in nodes}
+
+    def find(self, x):
+        # Path compression
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union(self, x, y):
+        rx, ry = self.find(x), self.find(y)
+        if rx == ry:
+            return False  # already in same set → would form a cycle
+        # Union by rank
+        if self.rank[rx] < self.rank[ry]:
+            rx, ry = ry, rx
+        self.parent[ry] = rx
+        if self.rank[rx] == self.rank[ry]:
+            self.rank[rx] += 1
+        return True
+
+
+def kruskal(nodes, edges):
+    """
+    nodes: list of all vertices
+    edges: list of (weight, u, v)
+    Returns: (MST edges list, total MST weight)
+    """
+    edges.sort()          # sort by weight
+    uf = UnionFind(nodes)
+
+    mst_edges    = []
+    total_weight = 0
+
+    for weight, u, v in edges:
+        if uf.union(u, v):           # adds edge only if no cycle
+            mst_edges.append((u, v, weight))
+            total_weight += weight
+            if len(mst_edges) == len(nodes) - 1:
+                break                # MST is complete
+
+    return mst_edges, total_weight
+
+# Example
+nodes = ['A', 'B', 'C', 'D']
+edges = [(2, 'A', 'B'), (3, 'A', 'C'), (1, 'B', 'C'), (4, 'B', 'D'), (5, 'C', 'D')]
+mst, weight = kruskal(nodes, edges)
+print(mst)    # [('B', 'C', 1), ('A', 'B', 2), ('B', 'D', 4)]
+print(weight) # 7
+```
+
+**Trace on the example above:**
+
+| Step | Edge Considered | Action | Reason |
+|------|----------------|--------|--------|
+| 1 | B — C (1) | Add | Different components |
+| 2 | A — B (2) | Add | Different components |
+| 3 | A — C (3) | Skip | A and C already connected |
+| 4 | B — D (4) | Add | Different components — MST done |
+
+---
+
+### 3.10 Prim's vs Kruskal's
+
+| Feature | Prim's | Kruskal's |
+|---------|--------|-----------|
+| Approach | Grow one tree from a start vertex | Merge components via sorted edges |
+| Data structure | Min-heap (priority queue) | Sorted edge list + Union-Find |
+| Time complexity | $O((V + E) \log V)$ | $O(E \log E)$ |
+| Best for | Dense graphs ($E \approx V^2$) | Sparse graphs ($E \ll V^2$) |
+| Handles disconnected graphs | No (only connected) | Yes (produces spanning forest) |
+| Cycle detection | Implicit (visited set) | Union-Find |
+
+Both produce a valid **Minimum Spanning Tree** for a connected, undirected, weighted graph.
+
+---
+
 ## 4. MCQs (15 Questions)
 
 **Q1.** A graph with directed edges is called:
